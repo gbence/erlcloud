@@ -137,7 +137,7 @@
           formatted_price::string()
          }).
 
--type(mturk_comparator() :: '<' | '=<' | '>' | '>=' | '==' | '/=' | exists).
+-type(mturk_comparator() :: '<' | '=<' | '>' | '>=' | '==' | '/=' | in | not_in | exists).
 -record mturk_locale, {
           country_code::string()
          }.

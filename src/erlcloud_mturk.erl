@@ -231,6 +231,8 @@ encode_comparator('>') -> "GreaterThan";
 encode_comparator('>=') -> "GreaterThanOrEqualTo";
 encode_comparator('==') -> "EqualTo";
 encode_comparator('/=') -> "NotEqualTo";
+encode_comparator(in) -> "In";
+encode_comparator(not_in) -> "NotIn";
 encode_comparator(exists) -> "Exists".
 
 decode_comparator("LessThan") -> '<';
@@ -239,6 +241,8 @@ decode_comparator("GreaterThan") -> '>';
 decode_comparator("GreaterThanOrEqualTo") -> '>=';
 decode_comparator("EqualTo") -> '==';
 decode_comparator("NotEqualTo") -> '/=';
+decode_comparator("In") -> in;
+decode_comparator("NotIn") -> not_in;
 decode_comparator("Exists") -> exists.
 
 encode_locale_value(undefined) -> [];
