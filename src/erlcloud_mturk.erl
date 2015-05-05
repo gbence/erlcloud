@@ -62,7 +62,7 @@
 -include_lib("erlcloud/include/erlcloud_mturk.hrl").
 -include_lib("xmerl/include/xmerl.hrl").
 
--define(API_VERSION, "2008-08-02").
+-define(API_VERSION, "2013-11-15").
 -define(API_SERVICE, "AWSMechanicalTurkRequester").
 -define(DEFAULT_NOTIFICATION_VERSION, "2006-05-05").
 -define(XMLNS_QUESTIONFORM, "http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2005-10-01/QuestionForm.xsd").
