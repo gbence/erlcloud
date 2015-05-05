@@ -216,6 +216,13 @@ create_hit(HIT, Config) ->
       Doc
      ).
 
+% Locale is a list of locales.
+encode_qualification_requirement(#mturk_qualification_requirement{comparator=Comparator, locale_value=[_|_]=Locales}=QR) when Comparator == in orelse Comparator == not_in ->
+    [
+     {"QualificationTypeId", QR#mturk_qualification_requirement.qualification_type_id},
+     {"Comparator", encode_comparator(Comparator)},
+     {"RequiredToPreview", QR#mturk_qualification_requirement.required_to_preview}
+    ] ++ erlcloud_aws:param_list([encode_locale_value(LV) || LV <- Locales], "LocaleValue");
 encode_qualification_requirement(QR) ->
     [
      {"QualificationTypeId", QR#mturk_qualification_requirement.qualification_type_id},
